@@ -1,1 +1,1 @@
-javascript: (function()%7B(function() %7Bvar x %3D document.createElement(%22script%22)%3Bx.src %3D %22https%3A%2F%2Fspaced.gg%2Fapi%2Fconsole%2Fmain.js%22%3Bx.onload %3D document.head.appendChild(x)%3B%7D)()%7D)()
+javascript: (function()%7B(function() %7Bvar x %3D document.createElement(%22script%22)%3Bx.src %3D %22https%3A%2F%2Fraw.githubusercontent.com%2FSpacedOutCode%2FOxyGen2%2Fmain%2Fscript.js%22%3Bx.onload %3D document.head.appendChild(x)%3B%7D)()%7D)()
