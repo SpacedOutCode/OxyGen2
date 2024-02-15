@@ -11,8 +11,9 @@ It was made because my school (and many others) blocked us from using inspect el
 
 - Console
 - Tools tab with school cheats built in
-- ELement editing
-- Inspect element
+- Element editing (Moved to settings tab)
+- Inspect element (Moved to settings tab)
+- 
 
 ## To-Add
 
