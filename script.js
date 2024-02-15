@@ -16,12 +16,6 @@
   var html =
     `
       <div class="OxyGen-container-nav" id="OxyGen-container-nav">
-          <a class="OxyGen-container-nav-elementViewer">` +
-    "\uD83D\uDD0D" +
-    `</a>
-          <a class="OxyGen-container-nav-elementEditor">` +
-    "\u270E" +
-    `</a>
           <a name="OxyGen-container-body-elements">Elements</a>
           <a name="OxyGen-container-body-console">Console</a>
           <a name="OxyGen-container-body-tools" class="active">Tools</a>
@@ -67,7 +61,82 @@
           </div>
           
           <div class="OxyGen-container-body-settings hidden">
-              <h3>Settings</h3>
+              <div class="settings">
+                <div class="setting-column">
+                  <div class="setting">
+                    <h5 class="setting-text">Select Element</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Edit Elements</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="setting-column">
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                  <div class="setting">
+                    <h5 class="setting-text">Toggle Example</h5>
+                    <label class="switch">
+                      <input type="checkbox" >
+                      <span class="slider "></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
           </div>
       </div>
   `.trim();
@@ -375,6 +444,13 @@
       display: flex;
       padding: 20px 20px 0 20px;
     }
+
+    .OxyGen-container-body-settings {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      align-items: center;
+    }
     
     .OxyGen-container-body {
       height: 100%;
@@ -432,6 +508,87 @@
       width: 80%;
       padding: 10px;
       color: #fff;
+    }
+
+    .settings {
+      display: flex;
+      flex-direction: row;
+      gap: 1vw;
+      flex-wrap: nowrap;
+      padding: 1vw;
+    }
+    .settings-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .setting {
+      display: flex;
+      flex-direction: row;
+      gap: 0.7vw;
+      height: fit-content;
+      padding: 5px;
+      align-items: center;
+      justify-content: right;
+    }
+
+    .setting-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: #fff;
+      margin: 0;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+    }
+    
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #292A2F;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%
+    }
+    
+    input:checked + .slider {
+      background-color: #7cacf8;
+    }
+    
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    
+    input:checked + .slider:before {
+      -webkit-transform: translateX(25px);
+      -ms-transform: translateX(25px);
+      transform: translateX(25px);
     }
       .string, .boolean, .number { font-weight: bold; }
   
@@ -681,10 +838,7 @@
     }
   });
 
-  document
-    .getElementsByClassName(
-      "OxyGen-container-nav-elementViewer"
-    )[0]
+  document.querySelectorAll(".slider")[0]
     .addEventListener("click", function () {
       if (snowlord_variables.loaded) {
         snowlord_variables.tooltip.showing =
@@ -757,10 +911,7 @@
       snowlord_variables.showing = false;
     });
 
-  document
-    .getElementsByClassName(
-      "OxyGen-container-nav-elementEditor"
-    )[0]
+    document.querySelectorAll(".slider")[1]
     .addEventListener("click", function () {
       if (
         document.body.contentEditable != "true" ||
