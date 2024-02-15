@@ -12,13 +12,6 @@
 
     elem.click();
     elem.remove();
-    var font = `<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script  defer>hljs.highlightAll();</script>`
-    document.head.insertAdjacentHTML( 'beforeend', font );
   }
   var html =
     `
@@ -30,8 +23,8 @@
     "\u270E" +
     `</a>
           <a name="OxyGen-container-body-elements">Elements</a>
-          <a name="OxyGen-container-body-console" class="active">Console</a>
-          <a name="OxyGen-container-body-tools">Tools</a>
+          <a name="OxyGen-container-body-console">Console</a>
+          <a name="OxyGen-container-body-tools" class="active">Tools</a>
           <a name="OxyGen-container-body-settings">Settings</a>
           <a name="OxyGen-container-body-version">O&sup2; 1.7</a>
           <a class="OxyGen-container-body-exit">` +
@@ -41,68 +34,36 @@
       
       <div class="OxyGen-container-body">
           <div class="OxyGen-container-body-elements hidden">
-              <h3>Elements</h3>
-              <pre><code class="OxyGen-container-body-elements-container language-html"></code></pre>
+            <pre><code class="OxyGen-container-body-elements-container"></code></pre>
           </div>
-          
-          <div class="OxyGen-container-body-console showing">
+          <div class="OxyGen-container-body-console hidden">
               <div class="OxyGen-container-body-console-text" style="user-select: auto;">
                   <div class="OxyGen-container-body-console-messages">
-                      <span style="color: #bababa; user-select: none;">` +
-    "&#707;&#10240;" +
-    new Date().toLocaleTimeString().split(" ")[0] +
-    ` </span>
-                      <span style="color: #fff;" class="msg">Console has loaded!</span>
+                  <div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">&#10240;` + new Date().toLocaleTimeString().split(" ")[0] + "&#10240;" + `</span><span style="color: #fff;" class="msg">Console Loaded!</span></div>
                   </div>
               </div>
               <div class="OxyGen-container-body-console-commands">
                   <textarea id="OxyGen-container-body-console-input" placeholder="console.log('Hello World!');" style="position: sticky; width: 100%; height: 90%; outline: none; border: none; background-color: #1c1e1f; color: #fff; class="msg" "></textarea>
               </div>
           </div>
-          
-          <div class="OxyGen-container-body-sources hidden">
-              <div class="OxyGen-container-body-sources-scripts" style="padding-left: 10px;">
-                  <h3>Page <a class="OxyGen-container-body-sources-scripts-reload" style="cursor: pointer; color: #fff; user-select: none;">` +
-    "\u21BA" +
-    `</a></h3>
-                  <div class="OxyGen-container-body-sources-scripts-container" style="float: left; width: 60%; background-color: #1c1e1f; color: #fff; class="msg"">
-                      <ul style="float: left; width: 26%; padding: 3%; margin: 0;">
-                          <li>Scripts</li>
-                          <ul class="OxyGen-container-body-sources-other" style="padding: 3px; height: 120px; overflow:hidden; overflow-y:scroll; background-color: #1c1e1f; color: #fff; class="msg"">
-                              <li>Main.js</li>
-                              <li>Script.js</li>
-                          </ul>
-                      </ul>
-                      <ul style="float: left; width: 26%; padding: 3%; margin: 0;">
-                          <li>Styles</li>
-                          <ul class="OxyGen-container-body-sources-styles" style="padding: 3px; height: 120px; overflow:hidden; overflow-y:scroll; background-color: #1c1e1f; color: #fff; class="msg"">
-                              <li>Main.css</li>
-                              <li>Style.css</li>
-                          </ul>
-                      </ul>
-                      <ul style="float: left; width: 26%; padding: 3%; margin: 0;">
-                          <li>Meta</li>
-                          <ul class="OxyGen-container-body-sources-main" style="padding: 3px; height: 120px; overflow:hidden; overflow-y:scroll; background-color: #1c1e1f; color: #fff; class="msg"">
-                              <li>Index.js</li>
-                              <li>Style.js</li>
-                          </ul>
-                      </ul>
-                  </div>
-                  
-                  <div class="OxyGen-container-body-sources-scripts-preview" style="float: left; width: 40 %; background-color: #bababa;">
-                      <iframe class="OxyGen-container-body-sources-scripts-preview-frame" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
-                  </div>
+          <div class="OxyGen-container-body-tools showing">
+              <div class="cards">
+                <div class="card">
+                  <h5 class="card-title">DeltaMath Bot</h5>
+                  <p class="card-author">Made by <br><a href="https://github.com/flowingsalt/Deltamath-Bot">@flowingsalt</a></p>
+                  <button class="card-button" onclick="deltaBot()">Activate</button>
+                </div>
+                <div class="card">
+                  <h5 class="card-title">EdPuzzle Bot</h5>
+                  <p class="card-author">Made by <br><a href="https://github.com/ading2210/edpuzzle-answers">@ading2210</a></p>
+                  <button class="card-button" onclick="edpuzzleBot">Activate</button>
+                </div>
+                <div class="card">
+                  <h5 class="card-title">Townsend Press Bot</h5>
+                  <p class="card-author">Made by <br><a href="https://github.com/SpacedOutCode/TSPCheat">@spaced.out.code</a></p>
+                  <button class="card-button" onclick="townsendBot()">Activate</button>
+                </div>
               </div>
-          </div>
-          
-          <div class="OxyGen-container-body-tools hidden">
-              <h3>Tools</h3>
-              <h4>Deltamath answer bot made by <a href="https://github.com/flowingsalt/Deltamath-Bot">flowingsalt</a></h4>
-              <button onclick="deltaBot()" style="color: white !important; background-color: #2f3136; border-radius: 5px; border-width: 0;">DeltaBot</button>
-              <h4>Edpuzzle Answer bot made by <a href="https://github.com/ading2210/edpuzzle-answers">ading2210</a></h4>
-              <button onclick="edpuzzleBot()" style="color: white !important; background-color: #2f3136; border-radius: 5px; border-width: 0;">PuzzleBot</button>
-              <h4>Townsend Press answer bot made by <a href="https://spaced.gg">Spaced</a>. For more info click <a href="https://github.com/SpacedOutCode/TSPCheat">Here</a> </h4>
-              <button onclick="townsendBot()" style="color: white !important; background-color: #2f3136; border-radius: 5px; border-width: 0;">TownsendBot</button>
           </div>
           
           <div class="OxyGen-container-body-settings hidden">
@@ -179,25 +140,15 @@
                   msg = msg.replace(/(\?\:\\r\\n|\\r|\\n)/g, "<br>");
               } catch(e) {}
               if (typeof(msg) == "number") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
-    "\u2705" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #0015ff;" class="msg"> ' + msg +'</span></div>';	
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">&#10240;' + new Date().toLocaleTimeString().split(" ")[0] + "&#10240;" + '</span><span style="color: #0015ff;" class="msg">' + msg +'</span></div>';	
               } else if (typeof(msg) == "string") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
-    "\u2705" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #fff;" class="msg">' + msg +'</span><span style="color: #00bae8">"</span></div>';				
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">&#10240;' + new Date().toLocaleTimeString().split(" ")[0] + "&#10240;" + '</span><span style="color: #fff;" class="msg">' + msg +'</span></div>';				
               } else if (typeof(msg) == "function") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
-    "\u2705" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #fff;" class="msg">' + msg +'</span><span style="color: #00bae8">"</span></div>';								
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">&#10240;' + new Date().toLocaleTimeString().split(" ")[0] + "&#10240;" + '</span><span style="color: #fff;" class="msg">' + msg +'</span></div>';								
               } else if (typeof(msg) == "undefined") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
-    "\u2B9E" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #b5b5b5;" class="msg"> ' + msg +'</span></div>';
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">&#10240;' + new Date().toLocaleTimeString().split(" ")[0] + "&#10240;" + '</span><span style="color: #b5b5b5;" class="msg">' + msg +'</span></div>';
               } else {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
-    "\u2705" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #fff;" class="msg"> ' + msg +'</span></div>';
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">&#10240;' + new Date().toLocaleTimeString().split(" ")[0] + "&#10240;" + '</span><span style="color: #fff;" class="msg">' + msg +'</span></div>';
               }
               if (c.childElementCount > cHeight) {
                   c.children[0].remove();
@@ -218,23 +169,23 @@
               if (snowlord_variables.hideLogs) {
                   // Stop logging
               } else if (typeof(msg) == "number") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u274C" +
     `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #0015ff;" class="msg"> ' + msg +'</span></div>';	
               } else if (typeof(msg) == "string") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u274C" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #d10000;" class="msg">' + msg +'</span><span style="color: #00bae8">"</span></div>';				
+    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #d10000;" class="msg">' + msg +'</span></div>';				
               } else if (typeof(msg) == "function") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u274C" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #d10000;" class="msg">' + msg +'</span><span style="color: #00bae8">"</span></div>';								
+    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #d10000;" class="msg">' + msg +'</span></div>';								
               } else if (typeof(msg) == "undefined") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u2B9E" +
     `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #b5b5b5;" class="msg"> ' + msg +'</span></div>';
               } else {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u274C" +
     `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #d10000;" class="msg"> ' + msg +'</span></div>';
               }
@@ -257,23 +208,23 @@
               if (snowlord_variables.hideLogs) {
                   // Stop logging
               } else if (typeof(msg) == "number") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u26A0\uFE0F" +
     `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #0015ff;" class="msg"> ' + msg +'</span></div>';	
               } else if (typeof(msg) == "string") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u26A0\uFE0F" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #998201;" class="msg">' + msg +'</span><span style="color: #00bae8">"</span></div>';				
+    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #998201;" class="msg">' + msg +'</span></div>';				
               } else if (typeof(msg) == "function") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u26A0\uFE0F" +
-    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #998201;" class="msg">' + msg +'</span><span style="color: #00bae8">"</span></div>';								
+    `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #00bae8"> "</span><span style="color: #998201;" class="msg">' + msg +'</span></div>';								
               } else if (typeof(msg) == "undefined") {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u2B9E" +
     `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #b5b5b5;" class="msg"> ' + msg +'</span></div>';
               } else {
-                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">` +
+                  c.innerHTML += '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">` +
     "\u26A0\uFE0F" +
     `' + new Date().toLocaleTimeString().split(" ")[0] + '</span><span style="color: #998201;" class="msg"> ' + msg +'</span></div>';
               }
@@ -285,7 +236,6 @@
               snowlord_variables.log(msg);
           }
       }
-      
   `.trim();
 
   var css = `	
@@ -414,7 +364,75 @@
         border-bottom: 2px solid #7cacf8;
         cursor: pointer;
     }
+    
+    .OxyGen-container-body-elements {
+      width: 100%;
+      height: 100%;
+    }
+    .OxyGen-container-body-tools {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      padding: 20px 20px 0 20px;
+    }
+    
+    .OxyGen-container-body {
+      height: 100%;
+      width: 100%;
+    }
 
+    .cards {
+      display: inline-flex;
+      flex-direction: row;
+      gap: 1vw;
+      flex-wrap: nowrap;
+      padding: 0.5vw;
+      height: 70%;
+      flex: 1 1 0;
+    }
+
+    .card {
+      width: 20%;
+      height: 100%;
+      background-color: #252729;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 7px;
+      padding: 20px;
+    }
+    .card-title {
+      text-align: center;
+      color: #7cacf8;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+    }
+    .card-author {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      text-align: center;
+      color: #808080;
+      margin: 1px 0 7px 0;
+    }
+    .card-author a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      text-align: center;
+      color: #3e5bab;
+    }
+    .card-button {
+      border-radius: 50px;
+      border: none;
+      background-color: #7cacf8;
+      width: 80%;
+      padding: 10px;
+      color: #fff;
+    }
       .string, .boolean, .number { font-weight: bold; }
   
       .string { color: rgb(233, 63, 59); }
@@ -514,7 +532,7 @@
       document.getElementsByClassName(
         "OxyGen-container-body-console-text"
       )[0].innerHTML =
-        '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">â®ž' +
+        '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">â®ž' +
         new Date().toLocaleTimeString().split(" ")[0] +
         ' </span><i style="color: #fff;" class="msg">Console was cleared</i></div>';
       this.value = "";
@@ -539,7 +557,7 @@
         document.getElementsByClassName(
           "OxyGen-container-body-console-text"
         )[0].innerHTML =
-          '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none;">â®ž' +
+          '<div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px">â®ž' +
           new Date().toLocaleTimeString().split(" ")[0] +
           ' </span><i style="color: #bababa; class="msg"">Console was cleared</i></div>';
         this.value = "";
@@ -590,13 +608,10 @@
   var font = `<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>`
-    document.head.insertAdjacentHTML( 'beforeend', font );
-  var elementViewer = document.getElementsByClassName(
-    "OxyGen-container-nav-elementViewer"
-  )[0];
-  elementViewer.addEventListener("click", function () {});
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script defer>hljs.highlightAll(); </script>`
+  document.head.insertAdjacentHTML( 'beforeend', font );
 
   // Tooltip
   document.addEventListener("mousemove", function (e) {
@@ -760,18 +775,12 @@
         document.body.designMode = "off";
       }
     });
-  document
-    .getElementsByClassName(
-      "OxyGen-container-body-sources-scripts-reload"
-    )[0]
-    .click();
   document.getElementsByClassName(
     "OxyGen-container-body-elements-container"
   )[0].innerText = document.body.innerHTML.replace(
     /<\/\w+>/g,
     (e) => e + "\r\n"
   );
-  hljs.highlightAll();
 })();
 function deltaBot() {
   fetch(
