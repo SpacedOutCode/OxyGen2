@@ -37,7 +37,7 @@
                   </div>
               </div>
               <div class="OxyGen-container-body-console-commands">
-                  <textarea id="OxyGen-container-body-console-input" placeholder="console.log('Hello World!');" style="position: sticky; width: 100%; height: 90%; outline: none; border: none; background-color: #1c1e1f; color: #fff; class="msg" "></textarea>
+                  <textarea id="OxyGen-container-body-console-input" placeholder="console.log('Hello World!');" style="position: sticky; width: 100%; height: 90%; outline: none; border: none; background-color: #1c1e1f; color: #fff;" class="msg" onpaste="return true;"></textarea>
               </div>
           </div>
           <div class="OxyGen-container-body-tools showing">
@@ -72,43 +72,6 @@
                   </div>
                   <div class="setting">
                     <h5 class="setting-text">Edit Elements</h5>
-                    <label class="switch">
-                      <input type="checkbox" >
-                      <span class="slider "></span>
-                    </label>
-                  </div>
-                  <div class="setting">
-                    <h5 class="setting-text">Toggle Example</h5>
-                    <label class="switch">
-                      <input type="checkbox" >
-                      <span class="slider "></span>
-                    </label>
-                  </div>
-                  <div class="setting">
-                    <h5 class="setting-text">Toggle Example</h5>
-                    <label class="switch">
-                      <input type="checkbox" >
-                      <span class="slider "></span>
-                    </label>
-                  </div>
-                  <div class="setting">
-                    <h5 class="setting-text">Toggle Example</h5>
-                    <label class="switch">
-                      <input type="checkbox" >
-                      <span class="slider "></span>
-                    </label>
-                  </div>
-                </div>
-                <div class="setting-column">
-                  <div class="setting">
-                    <h5 class="setting-text">Toggle Example</h5>
-                    <label class="switch">
-                      <input type="checkbox" >
-                      <span class="slider "></span>
-                    </label>
-                  </div>
-                  <div class="setting">
-                    <h5 class="setting-text">Toggle Example</h5>
                     <label class="switch">
                       <input type="checkbox" >
                       <span class="slider "></span>
@@ -388,7 +351,7 @@
           line-height: 1;
           color: #fff;
           width: 100%;
-          padding: 0;
+          padding-left: 10px;
           margin: 0;
       }
       
@@ -442,7 +405,7 @@
       width: 100%;
       height: 90%;
       display: flex;
-      padding: 20px 20px 0 20px;
+      align-items: center;
     }
 
     .OxyGen-container-body-settings {
@@ -462,8 +425,8 @@
       flex-direction: row;
       gap: 1vw;
       flex-wrap: nowrap;
-      padding: 0.5vw;
-      height: 70%;
+      padding: 0 0.5vw 0.5vw 20px;
+      height: 75%;
       flex: 1 1 0;
     }
 
@@ -926,6 +889,7 @@
         document.body.designMode = "off";
       }
     });
+
   document.getElementsByClassName(
     "OxyGen-container-body-elements-container"
   )[0].innerText = document.body.innerHTML.replace(
