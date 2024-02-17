@@ -3,6 +3,8 @@
 
 OxyGen2 is a mockup of google chromes inspect element feature in bookmarklet form.
 
+![ss](https://github.com/SpacedOutCode/OxyGen2/assets/91917326/5455e727-bcfb-4cd7-8934-99159049697a)
+
 ## Why was it made?
 
 It was made because my school (and many others) blocked us from using inspect element on our chromebooks. O² was created to give us that freedom back, allowing us to bypass the schools censorship.
