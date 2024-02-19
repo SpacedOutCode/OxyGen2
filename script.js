@@ -286,7 +286,7 @@
       }
   
       .tooltip .tooltiptext {
-          background-color: black;
+          background-color: #1C1E1F;
           transition: opacity 1s;
           visibility: hidden;
           text-align: center;
@@ -565,10 +565,10 @@
   `.trim();
 
   var tooltip = `
-      <div id="OxyGen-tooltip" style="padding: 5px; background-color: #000; position: absolute; color: #fff; user-select: none; z-index: 99999999999; border-radius: 10px; ">
-          <span id="OxyGen-tooltip-elementType" style="color:purple;"></span>
-          <span id="OxyGen-tooltip-classType" style="color:green;"></span>
-          <span id="OxyGen-tooltip-idType" style="color:orange;"></span>
+      <div id="OxyGen-tooltip" style="padding: 5px; background-color: #1C1E1F; position: absolute; color: #fff; user-select: none; z-index: 99999999999; border-radius: 10px; display: flex; flex-direction: column; border: 1px solid #a8d7ff;">
+          <span id="OxyGen-tooltip-elementType" style="color:#f5852a;"></span>
+          <span id="OxyGen-tooltip-classType" style="color:#2a93f5;"></span>
+          <span id="OxyGen-tooltip-idType" style="color:#f5e42a;"></span>
       </div>
   `.trim();
 
@@ -751,7 +751,7 @@
           // Yes
           document.getElementById(
             "OxyGen-tooltip-elementType"
-          ).innerHTML = e.target.tagName.toLowerCase();
+          ).innerHTML = "Element: " + e.target.tagName.toLowerCase();
         } else {
           // No
           document.getElementById(
@@ -764,7 +764,7 @@
           // Yes
           document.getElementById(
             "OxyGen-tooltip-classType"
-          ).innerHTML = "." + e.target.className;
+          ).innerHTML = "Class: " + e.target.className;
         } else {
           // No
           document.getElementById(
@@ -783,7 +783,7 @@
           // Yes
           document.getElementById(
             "OxyGen-tooltip-idType"
-          ).innerHTML = "#" + e.target.id;
+          ).innerHTML = "Id: " + e.target.id;
         } else {
           // No
           document.getElementById(
