@@ -78,9 +78,9 @@
                     </label>
                   </div>
                   <div class="setting">
-                    <h5 class="setting-text">Toggle Example</h5>
+                    <h5 class="setting-text">Simple Tooltips</h5>
                     <label class="switch">
-                      <input type="checkbox" >
+                      <input type="checkbox">
                       <span class="slider "></span>
                     </label>
                   </div>
@@ -565,7 +565,7 @@
   `.trim();
 
   var tooltip = `
-      <div id="OxyGen-tooltip" style="padding: 5px; background-color: #1C1E1F; position: absolute; color: #fff; user-select: none; z-index: 99999999999; border-radius: 10px; display: flex; flex-direction: column; border: 1px solid #a8d7ff;">
+      <div id="OxyGen-tooltip" style="padding: 5px; background-color: #1C1E1F; position: absolute; color: #fff; user-select: none; z-index: 99999999999; border-radius: 10px; display: flex; flex-direction: column; border: 1px solid #7cacf8; padding: 10px;">
           <span id="OxyGen-tooltip-elementType" style="color:#f5852a;"></span>
           <span id="OxyGen-tooltip-classType" style="color:#2a93f5;"></span>
           <span id="OxyGen-tooltip-idType" style="color:#f5e42a;"></span>
@@ -734,6 +734,7 @@
   document.head.insertAdjacentHTML( 'beforeend', font );
 
   // Tooltip
+  var simplyTip = false;
   document.addEventListener("mousemove", function (e) {
     tooltip = snowlord_variables.tooltip;
     if (snowlord_variables.loaded) {
@@ -749,9 +750,13 @@
         // Does the target have a tag name?
         if (e.target.tagName.toLowerCase() != "") {
           // Yes
-          document.getElementById(
+          if (!simplyTip) { document.getElementById(
             "OxyGen-tooltip-elementType"
-          ).innerHTML = "Element: " + e.target.tagName.toLowerCase();
+          ).innerHTML = "Element: " + e.target.tagName.toLowerCase();} else {
+            document.getElementById(
+              "OxyGen-tooltip-elementType"
+            ).innerHTML = e.target.tagName.toLowerCase();
+          }
         } else {
           // No
           document.getElementById(
@@ -762,9 +767,13 @@
         // Does the target have a class name?
         if (e.target.className != "") {
           // Yes
-          document.getElementById(
+          if (!simplyTip) { document.getElementById(
             "OxyGen-tooltip-classType"
-          ).innerHTML = "Class: " + e.target.className;
+          ).innerHTML = "Class: " + e.target.className;} else {
+            document.getElementById(
+              "OxyGen-tooltip-classType"
+            ).innerHTML = "." + e.target.className;
+          }
         } else {
           // No
           document.getElementById(
@@ -781,9 +790,13 @@
           e.target.id != "OxyGen-tooltip"
         ) {
           // Yes
-          document.getElementById(
+          if (!simplyTip) { document.getElementById(
             "OxyGen-tooltip-idType"
-          ).innerHTML = "Id: " + e.target.id;
+          ).innerHTML = "Id: " + e.target.id;} else {
+            document.getElementById(
+              "OxyGen-tooltip-idType"
+            ).innerHTML = "#" + e.target.id;
+          }
         } else {
           // No
           document.getElementById(
@@ -806,7 +819,17 @@
       if (snowlord_variables.loaded) {
         snowlord_variables.tooltip.showing =
           !snowlord_variables.tooltip.showing;
-        console.log("Tooltip showing: " + snowlord_variables.tooltip.showing);
+      }
+    });
+
+    document.querySelectorAll(".slider")[2]
+    .addEventListener("click", function () {
+      if (simplyTip) {
+        simplyTip = false;
+        document.querySelector("#OxyGen-tooltip").style.display = "flex";
+      } else {
+        simplyTip = true;
+        document.querySelector("#OxyGen-tooltip").style.display = "";
       }
     });
 
