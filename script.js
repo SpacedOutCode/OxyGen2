@@ -24,7 +24,6 @@
     html = data.html;
   })
   .catch(error => console.error('Error:', error));
- 
   var tooltip = `
       <div id="OxyGen-tooltip" style="padding: 5px; background-color: #1C1E1F; position: absolute; color: #fff; user-select: none; z-index: 99999999999; border-radius: 10px; display: flex; flex-direction: column; border: 1px solid #7cacf8; padding: 10px;">
           <span id="OxyGen-tooltip-elementType" style="color:#f5852a;"></span>
