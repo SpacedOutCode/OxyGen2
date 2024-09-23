@@ -16,7 +16,7 @@
   var html = ``;
   var javascript = ``;
   var css = ``;
-  await fetch("http://api.spaced.gg/oxygen2")
+  await fetch("https://api.spaced.gg/oxygen2")
   .then(response => response.json())
   .then(data => {
     javascript = data.js;
