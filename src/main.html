@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OxyGen Container</title>
+</head>
+<body>
+    <div class="OxyGen-container-nav" id="OxyGen-container-nav">
+        <a name="OxyGen-container-body-elements">Elements</a>
+        <a name="OxyGen-container-body-console">Console</a>
+        <a name="OxyGen-container-body-tools" class="active">Tools</a>
+        <a name="OxyGen-container-body-settings">Settings</a>
+        <a name="OxyGen-container-body-version">O² 1.7</a>
+        <a class="OxyGen-container-body-exit">🗙</a>
+    </div>
+
+    <div class="OxyGen-container-body">
+        <div class="OxyGen-container-body-elements hidden">
+            <pre><code class="OxyGen-container-body-elements-container"></code></pre>
+        </div>
+        <div class="OxyGen-container-body-console hidden">
+            <div class="OxyGen-container-body-console-text" style="user-select: auto;">
+                <div class="OxyGen-container-body-console-messages">
+                    <div class="OxyGen-container-body-console-messages"><span style="color: #bababa; user-select: none; font-size: 12px"> 4:24:27 </span><span style="color: #fff;" class="msg">Console Loaded!</span></div>
+                </div>
+            </div>
+            <div class="OxyGen-container-body-console-commands">
+                <textarea id="OxyGen-container-body-console-input" placeholder="console.log('Hello World!');" style="position: sticky; width: 100%; height: 90%; outline: none; border: none; background-color: #1c1e1f; color: #fff;" class="msg" onpaste="return true;"></textarea>
+            </div>
+        </div>
+        <div class="OxyGen-container-body-tools showing">
+            <div class="cards">
+                <div class="card">
+                    <h5 class="card-title">DeltaMath Bot</h5>
+                    <p class="card-author">Made by <br><a href="https://github.com/flowingsalt/Deltamath-Bot">@flowingsalt</a></p>
+                    <button class="card-button" onclick="deltaBot()">Activate</button>
+                </div>
+                <div class="card">
+                    <h5 class="card-title">EdPuzzle Bot</h5>
+                    <p class="card-author">Made by <br><a href="https://github.com/ading2210/edpuzzle-answers">@ading2210</a></p>
+                    <button class="card-button" onclick="edpuzzleBot">Activate</button>
+                </div>
+                <div class="card">
+                    <h5 class="card-title">Townsend Press Bot</h5>
+                    <p class="card-author">Made by <br><a href="https://github.com/SpacedOutCode/TSPCheat">@spaced.out.code</a></p>
+                    <button class="card-button" onclick="townsendBot()">Activate</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="OxyGen-container-body-settings hidden">
+            <div class="settings">
+                <div class="setting-column">
+                    <div class="setting">
+                        <h5 class="setting-text">Select Element</h5>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting">
+                        <h5 class="setting-text">Edit Elements</h5>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting">
+                        <h5 class="setting-text">Simple Tooltips</h5>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting">
+                        <h5 class="setting-text">Toggle Example</h5>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting">
+                        <h5 class="setting-text">Toggle Example</h5>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
